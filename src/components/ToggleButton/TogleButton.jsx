@@ -8,9 +8,10 @@ class ToggleButton extends Component {
     }
 
     handleClick = () => {
-        const {isActive} = this.state;
-        this.setState({
-            isActive: !isActive,
+        this.setState(prevState => {
+            return {
+                isActive: !prevState.isActive
+            }
         })
     }
 
