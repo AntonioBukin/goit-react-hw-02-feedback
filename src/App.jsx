@@ -1,5 +1,6 @@
 import Navbar from "./modules/Navbar/Navbar";
-import ToggleButton from "components/ToggleButton/TogleButton";
+import Vote from "./Vote/Vote";
+// import ToggleButton from "components/ToggleButton/TogleButton";
 
 import navbarMenuItems from "./data/navbarMenuItems.json";
 
@@ -10,7 +11,8 @@ function App() {
     <>
     <Navbar menuItems={navbarMenuItems} />
     <div className="container">
-    <ToggleButton text="Click me"/>
+    {/* <ToggleButton text="Click me"/> */}
+    <Vote/>
     </div>
     </>
   );

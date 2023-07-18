@@ -7,9 +7,9 @@ const Navbar = ({menuItems}) => {
         <div className={styles.navbar}>
             <div className="container">
             <div className={styles.navbarRow}>
-            <a href="#top">logo</a>
+            {/* <a href="#top">logo</a> */}
             <NavbarMenu items={menuItems} />
-            <button>To books list</button>
+            {/* <button>To books list</button> */}
             </div>
             </div>
         </div>
