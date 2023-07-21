@@ -36,16 +36,20 @@ class Vote extends Component { //робимо компонент обгортк�
     }
 
     render() {
+        const { good, neutral, bad } = this.state;
+
         const total = this.countTotalFeedback();
+        //const result = this.countPositiveFeedbackPercentage();
 
         const goodResult = this.countPositiveFeedbackPercentage("good");
-        const neutralResult = this.countPositiveFeedbackPercentage("neutral");
-        const badResult = this.countPositiveFeedbackPercentage("bad");
+        // const neutralResult = this.countPositiveFeedbackPercentage("neutral");
+        // const badResult = this.countPositiveFeedbackPercentage("bad");
 
         return (
             <div className={styles.wrapper}>
             <VoteActions leaveVote={this.leaveVote}/>
-            <VoteResult total = {total} goodResult = {goodResult} neutralResult = {neutralResult} badPercent = {badResult} />
+             <VoteResult goodResult={goodResult} total = {total} good = {good} neutral = {neutral} bad = {bad} />
+            {/* <VoteResult total = {total} goodResult = {goodResult} neutralResult = {neutralResult} badPercent = {badResult} /> */}
         </div>
             )
     }
