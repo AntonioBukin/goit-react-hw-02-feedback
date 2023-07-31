@@ -2,6 +2,7 @@ import { Component } from "react";
 
 import VoteActions from "./VoteActions/VoteActions";
 import VoteResult from "./VoteResult/VoteResult";
+import VoteBlock from "./VoteBlock/VoteBlock";
 
 import styles from "./vote.module.scss";
 
@@ -47,8 +48,13 @@ class Vote extends Component { //робимо компонент обгортк�
 
         return (
             <div className={styles.wrapper}>
-            <VoteActions leaveVote={this.leaveVote}/>
-             <VoteResult goodResult={goodResult} total = {total} good = {good} neutral = {neutral} bad = {bad} />
+                <VoteBlock title="Please leave feedback">
+                <VoteActions leaveVote={this.leaveVote}/>
+                </VoteBlock>
+                
+                <VoteBlock title="Results">
+                <VoteResult goodResult={goodResult} total = {total} good = {good} neutral = {neutral} bad = {bad} />
+                </VoteBlock>
             {/* <VoteResult total = {total} goodResult = {goodResult} neutralResult = {neutralResult} badPercent = {badResult} /> */}
         </div>
             )
