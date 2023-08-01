@@ -1,4 +1,4 @@
-import styles from "../vote.module.scss";
+//import styles from "../vote.module.scss";
 
 const VoteResult = ({goodResult,total, good, neutral, bad}) => {
     return (
