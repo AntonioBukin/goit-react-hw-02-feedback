@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import styles from "./vote-block.module.scss"
 
 const VoteBlock = ({title, children}) => {
@@ -8,5 +9,10 @@ const VoteBlock = ({title, children}) => {
         </div>
     )
 }
+
+VoteBlock.propTypes = {
+    title: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired,
+};
 
 export default VoteBlock;

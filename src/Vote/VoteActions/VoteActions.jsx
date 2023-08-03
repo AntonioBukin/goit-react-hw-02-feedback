@@ -1,4 +1,4 @@
-//import styles from "../vote.module.scss";
+import PropTypes from "prop-types";
 import styles from "../VoteBlock/vote-block.module.scss"
 
 const VoteActions = ({leaveVote}) => {
@@ -12,5 +12,10 @@ const VoteActions = ({leaveVote}) => {
         
     )
 }
+
+VoteActions.propTypes = {
+    leaveVote: PropTypes.func.isRequired,
+}
+
 
 export default VoteActions;

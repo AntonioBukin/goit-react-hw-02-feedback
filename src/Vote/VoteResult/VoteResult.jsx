@@ -1,6 +1,7 @@
-//import styles from "../vote.module.scss";
+import PropTypes from "prop-types";
 
-const VoteResult = ({goodResult,total, good, neutral, bad}) => {
+
+const VoteResult = ({goodResult, total, good, neutral, bad}) => {
     return (
         <>
             <p>Good: {good}</p>
@@ -13,5 +14,13 @@ const VoteResult = ({goodResult,total, good, neutral, bad}) => {
         
     )
 }
+
+VoteResult.propTypes = {
+    goodResult: PropTypes.number.isRequired,
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+    total: PropTypes.number.isRequired,
+};
 
 export default VoteResult;
