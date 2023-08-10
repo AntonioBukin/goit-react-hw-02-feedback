@@ -1,18 +1,3 @@
-// import Vote from "./Vote/Vote";
-// import "./styles/styles.scss";
-
-// function App() {
-//   return (
-//     <>
-//     <div className="container">
-//     <Vote/>
-//     </div>
-//     </>
-//   );
-// }
-
-// export default App;
-
 import { Component } from 'react';
 
 import VoteActions from './components/VoteActions/VoteActions';
@@ -39,22 +24,34 @@ class Vote extends Component {
     return total;
   }
 
-  countPositiveFeedbackPercentage(name) {
-    const value = this.state[name];
-    const total = this.countTotalFeedback();
-    if (!total) {
-      //якщо total 0, залишаємо нуль
-      return 0;
-    }
-    const result = Math.round((value / total) * 100);
-    return result;
-  }
+  // countPositiveFeedbackPercentage(name) {
+  //   const value = this.state[name];
+  //   const total = this.countTotalFeedback();
+  //   if (!total) {
+  //     //якщо total 0, залишаємо нуль
+  //     return 0;
+  //   }
+  //   const result = Math.round((value / total) * 100);
+  //   return result;
+  // }
+
+  countPositiveFeedbackPercentage = () => {
+    const { good } = this.state;
+    const value = this.countTotalFeedback();
+    return good > 0 ? Math.round((good / value) * 100) : 0;
+  };
 
   //створюємо функцію обробник подій
-  leaveVote = name => {
-    this.setState(prevState => {
-      return { [name]: prevState[name] + 1 };
-    });
+  // leaveVote = name => {
+  //   this.setState(prevState => {
+  //     return { [name]: prevState[name] + 1 };
+  //   });
+  // };
+
+  leaveVote = option => {
+    this.setState(prevState => ({
+      [option]: prevState[option] + 1,
+    }));
   };
 
   render() {
